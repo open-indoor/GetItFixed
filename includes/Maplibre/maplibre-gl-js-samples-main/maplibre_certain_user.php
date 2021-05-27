@@ -89,10 +89,10 @@
         
         let map = new maplibregl.Map({
             'container': 'map',
-            'center': [2.3596569, 48.8765734],
+            'center': [2.333333, 48.866667],
             'pitch': 60,
             'bearing': -60,
-            'zoom': 16,
+            'zoom': 11,
             'style': mapStyle
         });
 
