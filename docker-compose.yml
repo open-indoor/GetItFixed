@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 80:80
+      - 13080:80
     volumes:
       - ./:/var/www/html/
 
@@ -21,4 +21,4 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
+      - 13180:8080
