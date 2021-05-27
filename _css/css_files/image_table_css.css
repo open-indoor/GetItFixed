@@ -1,0 +1,98 @@
+
+table {
+  
+   font-family:Arial, Helvetica, sans-serif;
+   color:#666;
+   font-size:12px;
+   text-shadow: 1px 1px 0px #fff;
+   background:#FFF;
+   border:#ccc 1px solid;
+   width: 100%;
+
+
+   -moz-border-radius:3px;
+   -webkit-border-radius:3px;
+   border-radius:3px;
+
+   -moz-box-shadow: 0 1px 2px #FFF;
+   -webkit-box-shadow: 0 1px 2px #FFF;
+   box-shadow: 0 1px 2px #FFF;
+}
+table th {
+   padding:21px 25px 22px 25px;
+   border-top:1px solid #FFF;
+   border-bottom:1px solid #FFF;
+
+   background: #FFF;
+   background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
+   background: -moz-linear-gradient(top,  #FFF,  #FFF);
+}
+table th:first-child{
+   text-align: left;
+   padding-left:10px;
+}
+table tr:first-child th:first-child{
+   -moz-border-radius-topleft:3px;
+   -webkit-border-top-left-radius:3px;
+   border-top-left-radius:3px;
+}
+table tr:first-child th:last-child{
+   -moz-border-radius-topright:3px;
+   -webkit-border-top-right-radius:3px;
+   border-top-right-radius:3px;
+}
+table tr{
+   text-align: center;
+   padding-left:20px;
+}
+table tr td:first-child{
+   text-align: left;
+   padding-left:20px;
+   border-left: 0;
+}
+table tr td {
+   padding:18px;
+   border-top: 1px solid #FFF;
+   border-bottom:1px solid #FFF;
+   border-left: 1px solid #FFF;
+   
+   background: #FFF;
+   background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
+   background: -moz-linear-gradient(top,  #FFF,  #FFF);
+}
+table tr.even td{
+   background: #FFF;
+   background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
+   background: -moz-linear-gradient(top,  #FFF,  #FFF);
+}
+table tr:last-child td{
+   border-bottom:0;
+}
+table tr:last-child td:first-child{
+   -moz-border-radius-bottomleft:3px;
+   -webkit-border-bottom-left-radius:3px;
+   border-bottom-left-radius:3px;
+}
+table tr:last-child td:last-child{
+   -moz-border-radius-bottomright:3px;
+   -webkit-border-bottom-right-radius:3px;
+   border-bottom-right-radius:3px;
+}
+table tr:hover td{
+   background: #FFF;
+   background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
+   background: -moz-linear-gradient(top,  #FFF,  #FFF);  
+}
+
+
+
+
+/*######################################################################################
+########################################################################################*/
+.table-container
+{
+   width: 100%;
+   overflow-y: auto;
+   _overflow: auto;
+   margin: 0 0 1em;
+}

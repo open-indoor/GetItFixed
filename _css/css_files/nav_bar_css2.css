@@ -1,0 +1,198 @@
+
+
+/*--------------------------------
+ Functional Styles (Required)
+---------------------------------*/
+
+.header { position: relative; }
+#toggle, .toggle { display: none; }
+.menu > li { list-style: none; float:left;	}
+
+/* Nicolas Gallagher micro clearfix */
+.clearfix:before, .clearfix:after { display: table; content: ""; }
+.clearfix:after { clear: both; }
+
+@media only screen and (max-width: 868px){
+	.menu { display: none; opacity: 0; width: 100%; position: absolute; right: 0; }
+	.menu > li { display: block; width: 100%; margin: 0; }
+	.menu > li > a { display: block; width: 100%; text-decoration: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+	.toggle { display: block; position: relative; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+	#toggle:checked + div .menu { display: block; opacity: 1;}
+}
+
+
+/*--------------------------------
+ Presentation Styles (Editable)
+---------------------------------*/
+.header{
+	min-height: 100px;
+	height: 100%;
+	background: #16508B;
+}
+
+.header > h1 {
+	float: left;
+	padding: 10px 15px;		
+	/*font-family: Helvetica;*/
+	font-family: 'Orbitron', sans-serif;;
+	font-size: 55px;
+	color: #FFFFFF;
+	/*font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	font-size: 50px;
+	color: #A8A8A8;*/
+	text-shadow: rgba(0,0,0,0.5) -2px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+}
+
+.nav{ 
+	display: block; 
+	float: right; 
+}
+
+.nav, .menu, .menu > li, .menu > li > a{ 
+	height: 100%; 
+}
+
+.menu > li > a{
+	display: block;
+	padding: 42px 20px;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 1;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+	-webkit-transition: all 0.25s linear;
+	-moz-transition: all 0.25s linear;
+	-o-transition: all 0.25s linear;
+	transition: all 0.25s linear;
+}
+
+.menu > li > a:hover, .menu > li > a:focus{
+	background: #7396B9; /*allazei to eswteriko twn box twn links sto hover*/
+	box-shadow: inset 0px 5px #FFFFFF; 
+	color: #FFFFFF;
+	padding: 50px 20px 34px;
+}
+
+.toggle{ 
+	z-index: 2; 
+}
+
+@media only screen and (max-width: 868px){
+	.header{
+		padding: 0 15px;
+	}
+	.header > h1 { 
+		padding:10px 0 10px 0;
+	}
+
+	.menu{
+		background: #838383;
+		border-top: 1px solid #838383;
+	}
+	
+	.menu, .menu > li, .menu > li > a{
+		height: auto;
+	}
+	
+	.menu > li > a{
+		padding: 15px 15px;
+		color: #FFFFFF;
+	}
+	
+	.menu > li > a:hover, .menu > li > a:focus{
+		background: #7396B9;
+		box-shadow: inset 5px 0px #FFFFFF;
+		padding: 15px 15px 15px 25px;
+	}
+	
+	.toggle:after {
+		content: attr(data-open);
+		display: block;
+		width: 200px;
+		margin: 23px 0;
+		padding: 20px 50px;
+		background: #16508B;
+		-webkit-border-radius: 2px;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 12px;
+		color: #FFFFFF;
+		-webkit-transition: all 0.5s linear;
+		-moz-transition: all 0.5s linear;
+		-o-transition: all 0.5s linear;
+		transition: all 0.5s linear;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box; 
+		z-index: 2;
+	}
+	
+	.toggle:hover:after{
+		background: #7396B9;
+	}
+	
+	#toggle:checked + div .toggle:after{
+		content: attr(data-close);
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.header{
+		padding: 0 0px;
+	}
+	.header > h1 { 
+		text-align: center;
+		padding:10 0 10px 0;
+	}
+	.header > h1, .nav, .toggle:after{ 
+		float: none; 
+	}
+	.toggle:after { 
+		text-align: center; 
+		width: 100%; 
+		border-radius: 0px;
+		margin: 0px 0;
+		padding: 12px 0;
+	}
+}
+
+
+
+/*extra css gia th nav bar. htan sto arxiko arxeio*/
+* {
+ margin: 0;
+ padding: 0;
+ outline: 0;
+}
+
+html, body{
+ height: 100%;
+ background: #F2F2F2;
+}
+
+body, a{
+ font: normal 16px Helvetica, Verdana, Geneva, sans-serif;
+ color: #3F3F3F;      
+}
+
+.container{
+ min-height: 15%;
+ height: auto !important;
+ height: 15%;
+ margin: 0 auto -30px;
+}
+
+.container:after{
+ content: '';
+ display: block;
+ height: 30px;
+ clear: both;
+} 
+
+/* mymymymymymymymymymymy*/
+#iflogged	{
+	background: #333333;
+}

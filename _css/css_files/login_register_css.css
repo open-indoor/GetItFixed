@@ -1,0 +1,37 @@
+	input[type=text],input[type=password]
+	{
+	  border: 1px solid #ccc;
+	  border-radius: 3px;
+	  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	  width:200px;
+	  min-height: 22px;
+	  padding: 4px 20px 4px 8px;
+	  font-size: 12px;
+	  -moz-transition: all .2s linear;
+	  -webkit-transition: all .2s linear;
+	  transition: all .2s linear;
+	  text-align: center;
+	}			
+	
+	input[type=text]:required:invalid,input[type=password]:required:invalid
+	{
+		background:#FFF;
+		box-shadow: 0 0 5px #fa665a; 
+	}
+	
+	input[type=text]:required:valid,input[type=password]:required:valid
+	{
+		background:#FFF;	
+		box-shadow: 0 0 5px  #43D1AF; 
+
+	}
+	
+	/*input[type=name]:focus,input[type=text]:focus,input[type=password]:focus*/
+	input[type=text]:focus,input[type=password]:focus
+	{
+	  width: 280px;
+	  border-color: #51a7e8;
+	  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
+	  outline: none;
+	}
+    

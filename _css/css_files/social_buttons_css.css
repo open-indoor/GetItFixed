@@ -1,0 +1,98 @@
+   #social_buttons {
+      text-align: right;
+   }
+
+
+a.button-facebook,
+a.button-googleplus,
+a.button-rss,
+a.button-twitter {
+   text-decoration: none;
+
+   border-radius:6px 6px 0px 0px;
+
+   color: #fff;
+
+   font-size: 12px;
+   margin: 0 0px 0px 0;
+
+   padding: 5px 5px;
+   font-weight: bold;
+   text-align: right;
+   width: 20px;
+   cursor: pointer;
+}
+/*
+RSS
+------------------------------------------------------------ */
+a.button-rss {
+   background-color: #e2733d; /* fallback color */
+   background: -moz-linear-gradient(top, #e88845, #e2733d);
+   background: -ms-linear-gradient(top, #e88845, #e2733d);
+   background: -webkit-linear-gradient(top, #e88845, #e2733d);
+   border: 1px solid #e2733d;
+   text-shadow: 0 -1px -1px #9a4824;
+}
+ 
+a.button-rss:hover {
+   background-color: #e88845; /* fallback color */
+   background: -moz-linear-gradient(top, #e2733d, #e88845);
+   background: -ms-linear-gradient(top, #e2733d, #e88845);
+   background: -webkit-linear-gradient(top, #e2733d, #e88845);
+}
+/*
+Facebook
+------------------------------------------------------------ */
+ 
+a.button-facebook {
+   background-color: #2b4170; /* fallback color */
+   background: -moz-linear-gradient(top, #3b5998, #2b4170);
+   background: -ms-linear-gradient(top, #3b5998, #2b4170);
+   background: -webkit-linear-gradient(top, #3b5998, #2b4170);
+   border: 1px solid #2b4170;
+   text-shadow: 0 -1px -1px #1f2f52;
+}
+ 
+a.button-facebook:hover {
+   background-color: #3b5998; /* fallback color */
+   background: -moz-linear-gradient(top, #2b4170, #3b5998);
+   background: -ms-linear-gradient(top, #2b4170, #3b5998);
+   background: -webkit-linear-gradient(top, #2b4170, #3b5998);
+}
+/*
+Google+
+------------------------------------------------------------ */
+a.button-googleplus {
+   background-color: #c33219; /* fallback color */
+   background: -moz-linear-gradient(top, #e64522, #c33219);
+   background: -ms-linear-gradient(top, #e64522, #c33219);
+   background: -webkit-linear-gradient(top, #e64522, #c33219);
+   border: 1px solid #c33219;
+   text-shadow: 0 -1px -1px #972412;
+}
+ 
+a.button-googleplus:hover {
+   background-color: #e64522; /* fallback color */
+   background: -moz-linear-gradient(top, #c33219, #e64522);
+   background: -ms-linear-gradient(top, #c33219, #e64522);
+   background: -webkit-linear-gradient(top, #c33219, #e64522);
+}
+/*
+Twitter
+------------------------------------------------------------ */
+ 
+a.button-twitter {
+   background-color: #0081ce; /* fallback color */
+   background: -moz-linear-gradient(top, #00aced, #0081ce);
+   background: -ms-linear-gradient(top, #00aced, #0081ce);
+   background: -webkit-linear-gradient(top, #00aced, #0081ce);
+   border: 1px solid #0081ce;
+   text-shadow: 0 -1px -1px #005ea3;
+}
+ 
+a.button-twitter:hover {
+   background-color: #00aced; /* fallback color */
+   background: -moz-linear-gradient(top, #0081ce, #00aced);
+   background: -ms-linear-gradient(top, #0081ce, #00aced);
+   background: -webkit-linear-gradient(top, #0081ce, #00aced);
+}

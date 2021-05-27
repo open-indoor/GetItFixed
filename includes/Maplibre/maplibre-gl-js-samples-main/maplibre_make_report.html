@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Carte_make_report</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <style>
+        body { margin: 0; padding: 0; }
+	    #map { height: 70vh;}
+        
+        .loc_marker{
+            background-image: url('http://localhost/img/geolocation.png');
+            background-size: 100% 100%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="map"></div>
+    <pre id="coordinates" class="coordinates"></pre>
+    <script>
+        
+        mapStyle = {
+            "version": 8,
+            "name": "Blank",
+            "center": [0, 0],
+            "zoom": 0,
+            "sources": {
+                "raster-tiles": {
+                    "type": "raster",
+                    "tiles": [
+                        "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        "https://c.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    ],
+                    "tileSize": 256,
+                    "minzoom": 0,
+                    "maxzoom": 19
+                }
+            },
+            "sprite": "https://open-indoor.github.io/sprite/sprite",
+            "glyphs": "https://app.openindoor.io/fonts/{fontstack}/{range}.pbf",
+            "layers": [
+                {
+                    "id": "background",
+                    "type": "background",
+                    "paint": {
+                        "background-color": "#e0dfdf"
+                    }
+                },
+                {
+                    "id": "simple-tiles",
+                    "type": "raster",
+                    "source": "raster-tiles"
+                }
+            ],
+            "id": "blank"
+        }
+        
+        let map = new maplibregl.Map({
+            'container': 'map',
+            'center': [2.3596569, 48.8765734],
+            'pitch': 60,
+            'bearing': -60,
+            'zoom': 16,
+            'style': mapStyle
+            
+        });
+
+    
+    var coordinates = document.getElementById('coordinates');
+    
+    var el = document.createElement('div');
+        el.className = 'loc_marker';
+        var geoloc = new maplibregl.Marker(el,{draggable: true})
+          
+    
+
+    if ("geolocation" in navigator) { 
+        navigator.geolocation.getCurrentPosition(position => { 
+        console.log(position.coords.latitude, position.coords.longitude); 
+        formlat = document.getElementById("latbox").value = position.coords.latitude;
+        formlng = document.getElementById("lngbox").value = position.coords.longitude;
+        
+        geoloc.setLngLat([position.coords.longitude, position.coords.latitude])
+        .addTo(map);
+        
+        
+        function onDragEnd() {
+            lngLat = geoloc.getLngLat();
+
+            coordinates.style.display = 'block';
+            coordinates.innerHTML =
+            'Longitudes: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            formlat = document.getElementById("latbox").value = lngLat.lat;
+            formlng = document.getElementById("lngbox").value = lngLat.lng;
+        }
+            geoloc.on('dragend', onDragEnd);
+            
+        
+   
+    }); 
+
+   
+
+} else { /* geolocation IS NOT available, handle it */ }
+
+    
+    </script>
+
+</body>
+
+</html>
